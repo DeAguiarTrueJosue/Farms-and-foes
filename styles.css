@@ -77,6 +77,13 @@ body{
   align-content: center;
   text-align: center;
 }
+.farmName{
+  width: 90%;
+  height: 10%;
+  font-size: 28px;
+  align-content: center;
+  text-align: center;
+}
 .image{
   width: 90%;
   height: 50%;
@@ -87,6 +94,16 @@ body{
   align-content:first baseline;
   text-align: center;
 }
+.farmDescription{
+  position: relative;
+  top: -1%;
+  width: 90%;
+  height: 5%;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 15px;
+}
 .specifications{
   width: 90%;
   height: 15%;
@@ -95,16 +112,35 @@ body{
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.health, .farmerSecundaryType, .farmerType{
+.health, .farmerSecondaryType, .farmerType{
   width: 30%;
   height: 66%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.health{
   justify-content: center;
 }
-.heart, .farmerTypeImage, .farmerSecundaryTypeImage{
+.farmerSecondaryType{
+  flex-direction: row;
+}
+.nonFarmerSecondaryType{
+  flex-direction: column;
+}
+.Coins{
+  position: relative;
+  margin-inline: auto;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  margin-block: -33%;
+}
+.heart, .farmerTypeImage, .farmerSecondaryTypeImage{
+  aspect-ratio: 1 / 1;
   height: 100%;
-  aspect-ratio: 1;
 }
 .healthValue{
   position: relative;
@@ -112,4 +148,31 @@ body{
   height: 0;
   top: 20%;
   left: -35%;
+}
+.bronzeCoins{
+  order: 3;
+}
+.bronze{
+  position: relative;
+  margin-inline: -4%;
+  filter: invert(54%) sepia(76%) saturate(545%) hue-rotate(345deg) brightness(90%) contrast(75%);
+  -webkit-filter: invert(54%) sepia(76%) saturate(545%) hue-rotate(345deg) brightness(90%) contrast(75%);
+}
+.silverCoins{
+  order: 2;
+}
+.silver{
+  position: relative;
+  margin-inline: -4%;
+  filter: invert(86%) sepia(0%) saturate(0%) hue-rotate(278deg) brightness(92%) contrast(86%);
+  -webkit-filter: invert(86%) sepia(0%) saturate(0%) hue-rotate(278deg) brightness(92%) contrast(86%);
+  order: 2;
+}
+.goldCoins{
+  order: 1;
+}
+.gold{
+  position: relative;
+  margin-inline: -4%;
+  filter: invert(81%) sepia(21%) saturate(3827%) hue-rotate(1deg) brightness(108%) contrast(104%);
 }
