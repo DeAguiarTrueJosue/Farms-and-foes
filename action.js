@@ -55,11 +55,13 @@ class FarmExpansionCard extends FarmCard{
 }
 
 class FarmerCard extends Card{
-    constructor (name, type, image, description, health) {
+    constructor (name, type, image, description, farmerType, health, cost) {
         super(name, type, image, description)
+        this.farmerType = farmerType;
         this.health = health;
+        this.cost = cost;
     }
-    CreateFarmerCard()
+    CreateSpecificCard()
     {
         const card = super.CreateCard();
         card.classList.add("Farmer");
@@ -77,15 +79,75 @@ class FarmerCard extends Card{
         specifications.appendChild(document.createElement("div"));
         specifications.children[1].classList.add("farmerType");
         specifications.children[1].appendChild(document.createElement("img"));
-        specifications.children[1].children[0].src = "https://media.istockphoto.com/id/1346182204/vector/apple-icon-black-silhouette.jpg?s=612x612&w=0&k=20&c=jHehvaYYDe1vSkbyyMk-sZ0Aphqlfz7tz7E6v365hkc=";
+        specifications.children[1].children[0].src = images[this.farmerType];
         specifications.children[1].children[0].alt = "FarmerType";
         specifications.children[1].children[0].classList.add("FarmerTypeImage");
-        specifications.appendChild(document.createElement("div"));
-        specifications.children[2].classList.add("farmerSecondaryType");
-        specifications.children[2].classList.add("nonFarmerSecondaryType");
+        specifications.appendChild(createMoney(this.cost));
         card.appendChild(specifications);
         return card;
     }
+}
+
+function createMoney(money = 0)
+{
+    const farmerSecondaryType = document.createElement("div");
+    farmerSecondaryType.classList.add("farmerSecondaryType");
+    farmerSecondaryType.classList.add("nonFarmerSecondaryType");
+    if (money > 24){
+        const goldCoins = document.createElement("div");
+        goldCoins.classList.add("Coins");
+        for (let i = money; i > 24; i -= 25) {
+            const coin = document.createElement("img");
+            coin.classList.add("farmerSecondaryTypeImage");
+            coin.classList.add("gold");
+            coin.src = images["coin"];
+            coin.alt = "goldCoin";
+            goldCoins.appendChild(coin);
+        }
+        farmerSecondaryType.appendChild(goldCoins);
+    }
+        if (money > 4){
+        const silverCoins = document.createElement("div");
+        silverCoins.classList.add("Coins");
+        for (let i = money; i > 24; i -= 25) {
+            const coin = document.createElement("img");
+            coin.classList.add("farmerSecondaryTypeImage");
+            coin.classList.add("silver");
+            coin.src = images["coin"];
+            coin.alt = "silverCoin";
+            silverCoins.appendChild(coin);
+        }
+        farmerSecondaryType.appendChild(silverCoins);
+    }
+        if (money > 1){
+        const bronzeCoins = document.createElement("div");
+        bronzeCoins.classList.add("Coins");
+        for (let i = money; i > 24; i -= 25) {
+            const coin = document.createElement("img");
+            coin.classList.add("farmerSecondaryTypeImage");
+            coin.classList.add("bronze");
+            coin.src = images["coin"];
+            coin.alt = "bronzeCoin";
+            bronzeCoins.appendChild(coin);
+        }
+        farmerSecondaryType.appendChild(bronzeCoins);
+    }
+    return farmerSecondaryType;
+}
+
+const images = {
+    "coin": "https://www.clker.com/cliparts/9/k/b/s/z/c/button-black-md.png",
+    "Produce": "https://media.istockphoto.com/id/1346182204/vector/apple-icon-black-silhouette.jpg?s=612x612&w=0&k=20&c=jHehvaYYDe1vSkbyyMk-sZ0Aphqlfz7tz7E6v365hkc=",
+    "Produce/Wheat": "",
+    "Produce/Meat": "",
+    "Produce/Dairy": "",
+    "Wheat": "",
+    "Wheat/Meat": "",
+    "Wheat/Dairy": "",
+    "Meat": "",
+    "Meat/Dairy": "",
+    "Dairy": "",
+    "Any": "",
 }
 
 const CardType = {
@@ -97,14 +159,22 @@ const CardType = {
 }
 
 const farmers = [
-    new FarmerCard("Ethan", CardType.Farmer, "https://api.time.com/wp-content/uploads/2022/02/ethan-hill-time-koty-1.jpg", "When player has 4 farms, all produce symbols are worth double.", 7)
+    new FarmerCard(
+        "Ethan",
+        CardType.Farmer,
+        "https://api.time.com/wp-content/uploads/2022/02/ethan-hill-time-koty-1.jpg",
+        "When player has 4 farms, all produce symbols are worth double.",
+        "Produce",
+        7,
+        124,
+    )
 ];
 
 function CreateFarmers()
 {
     const box = document.getElementById("cardBox");
     for (let i = 0; i < farmers.length; i++) {
-        const card = farmers[i].CreateFarmerCard();
+        const card = farmers[i].CreateSpecificCard();
         box.appendChild(card);
     }
 }
