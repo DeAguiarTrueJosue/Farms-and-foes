@@ -10,10 +10,10 @@
             rel="stylesheet"  type='text/css'>
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body onload="CreateFarmers()">
         <div class="Cards">
             <div class="Title">Cards</div>
-            <div class="CardBox">
+            <div class="CardBox" id="cardBox">
                 <div class="Card Farmer">
                     <div class="name">ETHAN</div>
                     <img class="image" src="https://api.time.com/wp-content/uploads/2022/02/ethan-hill-time-koty-1.jpg" alt="Ethan">
@@ -26,8 +26,11 @@
                         <div class="farmerType">
                             <img src="https://media.istockphoto.com/id/1346182204/vector/apple-icon-black-silhouette.jpg?s=612x612&w=0&k=20&c=jHehvaYYDe1vSkbyyMk-sZ0Aphqlfz7tz7E6v365hkc=" alt="apple" class="farmerTypeImage">
                         </div>
-                        <div class="farmerSecondaryType">
-                            <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage">
+                        <div class="farmerSecondaryType nonFarmerSecondaryType">
+                            <div class="goldCoins Coins">
+                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage gold">
+                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage gold">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,50 +71,31 @@
                 <div class="Card FriendsAndFoes">
                     <div class="name">INFECTION</div>
                     <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/8/82/SARS-CoV-2_without_background.png" alt="Ethan">
-                    <div class="description">When player has 4 farms, all produce symbols are worth double.</div>
+                    <div class="description">All animals died. Every player loses 1 life per meat farm.</div>
                     <div class="specifications">
                         <div class="health">
-                            <img src="https://static.vecteezy.com/system/resources/thumbnails/053/289/894/small_2x/simple-black-heart-outline-on-a-white-background-png.png" alt="heart" class="heart">
-                            <p class="healthValue">7</p>
+                            <img src="https://i.pinimg.com/736x/de/58/68/de5868d24bb50ba9679551453f716b10.jpg" alt="heart" class="heart">
                         </div>
                         <div class="farmerType">
-                            <img src="https://media.istockphoto.com/id/1346182204/vector/apple-icon-black-silhouette.jpg?s=612x612&w=0&k=20&c=jHehvaYYDe1vSkbyyMk-sZ0Aphqlfz7tz7E6v365hkc=" alt="apple" class="farmerTypeImage">
+                            <img src="https://i.pinimg.com/564x/17/65/b5/1765b59cc6e30261a3acad9c024e5b40.jpg" alt="apple" class="farmerTypeImage">
                         </div>
-                        <div class="farmerSecondaryType nonFarmerSecondaryType">
-                            <div class="goldCoins Coins">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage gold">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage gold">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage gold">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage gold">
-                            </div>
-                            <div class="silverCoins Coins">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage silver">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage silver">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage silver">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage silver">
-                            </div>
-                            <div class="bronzeCoins Coins">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage bronze">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage bronze">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage bronze">
-                                <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage bronze">
-                            </div>
+                        <div class="farmerSecondaryType">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/053/289/894/small_2x/simple-black-heart-outline-on-a-white-background-png.png" alt="heart" class="farmerSecondaryTypeImage">
                         </div>
                     </div>
                 </div>
                 <div class="Card Action">
-                    <div class="name">ETHAN</div>
-                    <img class="image" src="https://api.time.com/wp-content/uploads/2022/02/ethan-hill-time-koty-1.jpg" alt="Ethan">
-                    <div class="description">When player has 4 farms, all produce symbols are worth double.</div>
+                    <div class="name">SPY</div>
+                    <img class="image" src="https://wiki.teamfortress.com/w/images/thumb/d/df/Spytaunt3.PNG/350px-Spytaunt3.PNG" alt="Ethan">
+                    <div class="description">Steal any farm expansion from any player and put it in your hand.</div>
                     <div class="specifications">
                         <div class="health">
-                            <img src="https://static.vecteezy.com/system/resources/thumbnails/053/289/894/small_2x/simple-black-heart-outline-on-a-white-background-png.png" alt="heart" class="heart">
-                            <p class="healthValue">7</p>
+                            <img src="https://e7.pngegg.com/pngimages/401/824/png-clipart-computer-icons-task-action-item-others-miscellaneous-angle-thumbnail.png" alt="heart" class="heart">
                         </div>
                         <div class="farmerType">
-                            <img src="https://media.istockphoto.com/id/1346182204/vector/apple-icon-black-silhouette.jpg?s=612x612&w=0&k=20&c=jHehvaYYDe1vSkbyyMk-sZ0Aphqlfz7tz7E6v365hkc=" alt="apple" class="farmerTypeImage">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTCxlMxKmOzKDXZ4jnlNDdmyggzQ6-OT6DRw&s" alt="apple" class="farmerTypeImage">
                         </div>
-                        <div class="farmerSecondaryType">
+                        <div class="farmerSecondaryType nonFarmerSecondaryType">
                             <div class="goldCoins Coins">
                                 <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage gold">
                                 <img src="https://cdn-icons-png.flaticon.com/512/156/156764.png" alt="coin" class="farmerSecondaryTypeImage gold">
