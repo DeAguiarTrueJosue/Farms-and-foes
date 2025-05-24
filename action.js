@@ -84,6 +84,7 @@ class FarmerCard extends Card{
         specifications.children[1].children[0].classList.add("FarmerTypeImage");
         specifications.appendChild(createMoney(this.cost));
         card.appendChild(specifications);
+        
         return card;
     }
 }
